@@ -47,7 +47,7 @@ exports.selectBlog = (req, res)=>{
 // update blog
 exports.updateBlog = (req, res) => {
     const reqBody = req.body;
-    const _id = reqBody['_id'];
+    const id = reqBody['id'];
     const title = reqBody['title'];
     const author = reqBody['author'];
     const content = reqBody['content'];
@@ -58,7 +58,7 @@ exports.updateBlog = (req, res) => {
         content : content
     }
 
-    blogModel.updateOne({ _id: _id }, { $set: updatedBlog }, { upsert: true }, (err, data) => {
+    blogModel.updateOne({ id: id }, { $set: updatedBlog }, { upsert: true }, (err, data) => {
         if(err){
             res.status(401).json({status:'Failed', data: err})
         }else{

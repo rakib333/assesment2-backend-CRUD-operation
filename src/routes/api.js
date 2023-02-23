@@ -16,7 +16,7 @@ router.get('/selectUser', userAuth, UserController.selectUser);
 // blog api endpoint
 router.post('/createBlog', userAuth, blogController.createBlog);
 router.get('/selectBlog', userAuth, blogController.selectBlog);
-router.get('/updateBlog/:_id', userAuth, blogController.updateBlog);
+router.get('/updateBlog', userAuth, blogController.updateBlog);
 router.get('/deleteBlog', userAuth, blogController.deleteBlog);
 
 
